@@ -1,128 +1,141 @@
 
 const CONTACT_CONFIG = {
-    // Replace these placeholders with your real bakery details.
-    whatsappNumber: "91YOURNUMBER",
-    phoneNumber: "YOUR_PHONE_NUMBER",
-    address: "YOUR_BAKERY_ADDRESS",
-    openingHours: "YOUR_OPENING_HOURS"
+    whatsappNumber: "917742191452",
+    phoneNumber: "916261619947",
+    address: "644, Narendra Tiwari Marg, near Dosa Crush, Usha Nagar, Indore, Madhya Pradesh 452009",
+    openingHours: "Please contact us for current opening hours"
 };
 
-const phoneLink = document.getElementById("phoneLink");
-const phoneText = document.getElementById("phoneText");
-const whatsappLink = document.getElementById("whatsappLink");
-const addressText = document.getElementById("addressText");
-const hoursText = document.getElementById("hoursText");
-const mapAddress = document.getElementById("mapAddress");
-const mapLink = document.getElementById("mapLink");
-const contactForm = document.getElementById("contactForm");
-const contactError = document.getElementById("contactError");
-
-function isPlaceholder(value) {
-    return !value || value.includes("YOUR_");
-}
-
-function cleanPhoneNumber(value) {
-    return value.replace(/\D/g, "");
-}
-
 function configureContactDetails() {
-    if (!isPlaceholder(CONTACT_CONFIG.phoneNumber)) {
-        const phone = cleanPhoneNumber(CONTACT_CONFIG.phoneNumber);
+    const phoneLink = document.getElementById("phoneLink");
+    const phoneText = document.getElementById("phoneText");
+    const whatsappLink = document.getElementById("whatsappLink");
+    const addressText = document.getElementById("addressText");
+    const hoursText = document.getElementById("hoursText");
+    const mapAddress = document.getElementById("mapAddress");
+    const mapLink = document.getElementById("mapLink");
 
-        phoneText.textContent = CONTACT_CONFIG.phoneNumber;
-        phoneLink.href = `tel:${phone}`;
-    } else {
-        phoneText.textContent = "Phone number to be added";
-        phoneLink.removeAttribute("href");
+    const hasPhone =
+        CONTACT_CONFIG.phoneNumber !== "YOUR_PHONE_NUMBER";
+
+    const hasWhatsApp =
+        CONTACT_CONFIG.whatsappNumber !== "91YOURNUMBER";
+
+    if (phoneText) {
+        phoneText.textContent = hasPhone
+            ? CONTACT_CONFIG.phoneNumber
+            : "Contact number coming soon";
     }
 
-    if (!isPlaceholder(CONTACT_CONFIG.whatsappNumber)) {
-        const whatsapp = cleanPhoneNumber(CONTACT_CONFIG.whatsappNumber);
-
-        whatsappLink.href =
-            `https://wa.me/${whatsapp}?text=${encodeURIComponent(
-                "Hello Make My Cake! I have an enquiry."
-            )}`;
-    } else {
-        whatsappLink.removeAttribute("href");
+    if (phoneLink) {
+        phoneLink.href = hasPhone
+            ? `tel:${CONTACT_CONFIG.phoneNumber}`
+            : "#";
     }
 
-    addressText.textContent = isPlaceholder(CONTACT_CONFIG.address)
-        ? "Bakery address to be added"
-        : CONTACT_CONFIG.address;
+    if (whatsappLink) {
+        whatsappLink.href = hasWhatsApp
+            ? `https://wa.me/${CONTACT_CONFIG.whatsappNumber}`
+            : "#";
 
-    hoursText.textContent = isPlaceholder(CONTACT_CONFIG.openingHours)
-        ? "Opening hours to be added"
-        : CONTACT_CONFIG.openingHours;
+        if (!hasWhatsApp) {
+            whatsappLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                alert("Our WhatsApp number will be available soon.");
+            });
+        }
+    }
 
-    if (!isPlaceholder(CONTACT_CONFIG.address)) {
+    if (addressText) {
+        addressText.textContent = CONTACT_CONFIG.address;
+    }
+
+    if (hoursText) {
+        hoursText.textContent = CONTACT_CONFIG.openingHours;
+    }
+
+    if (mapAddress) {
         mapAddress.textContent = CONTACT_CONFIG.address;
+    }
 
+    if (mapLink) {
         mapLink.href =
-            `https://www.google.com/maps/search/?api=1&query=${
-                encodeURIComponent(CONTACT_CONFIG.address)
-            }`;
+            "https://www.google.com/maps/search/?api=1&query=" +
+            encodeURIComponent(CONTACT_CONFIG.address);
 
-        mapLink.hidden = false;
-    } else {
-        mapAddress.textContent =
-            "Add the complete bakery address in contact.js to enable Google Maps.";
-        mapLink.hidden = true;
+        mapLink.target = "_blank";
+        mapLink.rel = "noopener noreferrer";
     }
 }
 
-contactForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+function setupContactForm() {
+    const contactForm = document.getElementById("contactForm");
+    const contactError = document.getElementById("contactError");
 
-    contactError.textContent = "";
+    if (!contactForm) return;
 
-    if (!contactForm.reportValidity()) {
-        return;
-    }
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    const whatsappNumber = cleanPhoneNumber(
-        CONTACT_CONFIG.whatsappNumber
-    );
+        if (contactError) {
+            contactError.textContent = "";
+        }
 
-    if (
-        isPlaceholder(CONTACT_CONFIG.whatsappNumber) ||
-        !/^\d{10,15}$/.test(whatsappNumber)
-    ) {
-        contactError.textContent =
-            "Please add the bakery's WhatsApp number in contact.js before sending an enquiry.";
-        return;
-    }
+        if (
+            CONTACT_CONFIG.whatsappNumber === "91YOURNUMBER" ||
+            !/^\d{10,15}$/.test(CONTACT_CONFIG.whatsappNumber)
+        ) {
+            if (contactError) {
+                contactError.textContent =
+                    "The bakery's WhatsApp number has not been configured yet.";
+            } else {
+                alert("The bakery's WhatsApp number has not been configured yet.");
+            }
+            return;
+        }
 
-    const name = document.getElementById("name").value.trim();
-    const mobile = document.getElementById("mobile").value.trim();
-    const enquiryType = document.getElementById("enquiryType").value;
-    const message = document.getElementById("message").value.trim();
+        const name = document.getElementById("name")?.value.trim() || "";
+        const mobile = document.getElementById("mobile")?.value.trim() || "";
+        const enquiryType =
+            document.getElementById("enquiryType")?.value || "General enquiry";
+        const message = document.getElementById("message")?.value.trim() || "";
 
-    if (!/^[6-9]\d{9}$/.test(mobile)) {
-        contactError.textContent =
-            "Please enter a valid 10-digit Indian mobile number.";
-        return;
-    }
+        if (!name || !mobile || !message) {
+            if (contactError) {
+                contactError.textContent =
+                    "Please fill in your name, mobile number, and message.";
+            }
+            return;
+        }
 
-    const whatsappMessage = [
-        "🍰 *MAKE MY CAKE — NEW ENQUIRY*",
-        "",
-        `*Name:* ${name}`,
-        `*Customer mobile:* ${mobile}`,
-        `*Enquiry type:* ${enquiryType}`,
-        "",
-        "*Message:*",
-        message,
-        "",
-        "Thank you!"
-    ].join("\n");
+        if (!/^[0-9+\-\s()]{10,18}$/.test(mobile)) {
+            if (contactError) {
+                contactError.textContent =
+                    "Please enter a valid mobile number.";
+            }
+            return;
+        }
 
-    const whatsappURL =
-        `https://wa.me/${whatsappNumber}?text=${
-            encodeURIComponent(whatsappMessage)
-        }`;
+        const whatsappMessage = [
+            "Hello Make My Cake!",
+            "",
+            "I have a new enquiry from your website.",
+            "",
+            `Name: ${name}`,
+            `Mobile: ${mobile}`,
+            `Enquiry type: ${enquiryType}`,
+            `Message: ${message}`
+        ].join("\n");
 
-    window.open(whatsappURL, "_blank");
+        const whatsappURL =
+            `https://wa.me/${CONTACT_CONFIG.whatsappNumber}?text=` +
+            encodeURIComponent(whatsappMessage);
+
+        window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    configureContactDetails();
+    setupContactForm();
 });
-
-configureContactDetails();
