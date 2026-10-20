@@ -4,277 +4,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover Make My Cake — cakes, brownies, cheesecakes and sweet treats for every celebration.">
-    <title>Make My Cake | Sweet Moments, Made Special</title>
-
+    <meta name="description" content="Discover freshly made cakes, beautiful custom designs and celebration cakes at Make My Cake, Indore.">
+    <title>Make My Cake | Every Celebration Deserves a Cake</title>
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
 </head>
-
 <body>
 
+    <div class="announcement">
+        Made with love, baked for your special moments ♡
+    </div>
+
     <header class="site-header">
-        <a href="index.html" class="logo" aria-label="Make My Cake home">
-            <span class="logo-icon">♡</span>
-            <span>Make My Cake</span>
+        <a class="brand" href="index.html">
+            <span class="brand-icon">♡</span>
+            <span>
+                <strong>MAKE MY CAKE</strong>
+                <small>A LITTLE HAPPINESS IN EVERY SLICE</small>
+            </span>
         </a>
 
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="Open navigation"
-            aria-expanded="false"
-            aria-controls="navLinks"
-        >☰</button>
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
 
         <nav class="nav-links" id="navLinks">
-            <a href="index.html" class="active">Home</a>
-            <a href="menu.html">Menu</a>
+            <a class="active" href="index.html">Home</a>
+            <a href="menu.html">Our Cakes</a>
+            <a href="make-your-cake.html">Make Your Cake</a>
             <a href="contact.html">Contact</a>
-            <a href="make-your-cake.html" class="make-cake-link">Make Your Cake <span>↗</span></a>
         </nav>
     </header>
 
     <main>
-
-        <!-- HERO -->
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <span class="eyebrow">A LITTLE LOVE IN EVERY BITE</span>
-
-                <h1>
-                    Life is sweeter<br>
-                    with a little <span>cake.</span>
-                </h1>
-
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">A LITTLE SWEETNESS GOES A LONG WAY</span>
+                <h1>Every celebration deserves <span>a beautiful cake.</span></h1>
                 <p>
-                    From everyday cravings to unforgettable celebrations,
-                    discover sweet treats that make your moments special.
+                    From everyday cravings to once-in-a-lifetime celebrations,
+                    find a cake that makes your moment a little more special.
                 </p>
 
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="menu.html">Explore Our Cakes ↗</a>
+                    <a class="btn btn-outline" href="make-your-cake.html">Customise Your Cake</a>
+                </div>
 
                 <div class="hero-note">
-                    <span class="note-heart">♡</span>
-                    Every occasion deserves something sweet.
+                    <span>♡</span>
+                    Thoughtfully made for your happiest moments.
                 </div>
             </div>
 
-            <div class="hero-visual">
-                <div class="hero-image-wrap">
-                    <img
-                        src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85"
-                        alt="Decorated chocolate celebration cake"
-                        fetchpriority="high"
-                    >
+            <div class="slideshow" aria-label="Make My Cake bakery photo slideshow">
+                <div class="slides">
+                    <img class="slide active"
+                         src="8.jpg"
+                         alt="Inside the Make My Cake bakery">
+
+                    <img class="slide"
+                         src="10.jpg"
+                         alt="The bakery counter at Make My Cake">
+
+                    <img class="slide"
+                         src="2.jpg"
+                         alt="Cakes displayed at the bakery">
+
+
+                <div class="slide-caption">
+                    <span class="slide-counter" id="slideCounter">01 / 04</span>
+                    <span id="slideCaption">A peek inside our bakery</span>
                 </div>
 
-                <div class="floating-note">
-                    <span class="floating-icon">✦</span>
-                    <div>
-                        <strong>Made for your moments</strong>
-                        <small>Choose something you love</small>
-                    </div>
-                </div>
+                <button class="slide-arrow slide-prev" id="prevSlide"
+                        aria-label="Previous photo">‹</button>
+                <button class="slide-arrow slide-next" id="nextSlide"
+                        aria-label="Next photo">›</button>
 
-                <div class="hero-decoration">♡</div>
-            </div>
-        </section>
-
-        <!-- BENEFITS -->
-        <section class="benefits">
-            <div class="benefit-item">
-                <span class="benefit-icon">♡</span>
-                <div>
-                    <h3>Something for everyone</h3>
-                    <p>Cakes and sweet treats to explore</p>
-                </div>
-            </div>
-
-            <div class="benefit-item">
-                <span class="benefit-icon">✦</span>
-                <div>
-                    <h3>Favourite flavours</h3>
-                    <p>From classics to special creations</p>
-                </div>
-            </div>
-
-            <div class="benefit-item">
-                <span class="benefit-icon">❀</span>
-                <div>
-                    <h3>Made for celebrations</h3>
-                    <p>Find a treat for your special day</p>
+                <div class="slide-dots" id="slideDots" aria-label="Choose a photo">
+                    <button class="slide-dot active" aria-label="Photo 1"></button>
+                    <button class="slide-dot" aria-label="Photo 2"></button>
+                    <button class="slide-dot" aria-label="Photo 3"></button>
+                    <button class="slide-dot" aria-label="Photo 4"></button>
                 </div>
             </div>
         </section>
 
-        <!-- FEATURED CAKES -->
-        <section class="cake-section section-padding" id="featured">
+        <section class="welcome section-padding">
+            <span class="eyebrow">WELCOME TO MAKE MY CAKE</span>
+            <h2>Good cakes. Happy hearts.</h2>
+            <p>
+                A birthday, a surprise, a family gathering or simply a sweet
+                craving — there's always a reason to celebrate with cake.
+                Explore our flavours or create something personal.
+            </p>
+
+            <div class="feature-row">
+                <article class="feature">
+                    <span class="feature-icon">♡</span>
+                    <h3>Made for Your Moments</h3>
+                    <p>Cakes for birthdays, milestones and little celebrations.</p>
+                </article>
+
+                <article class="feature">
+                    <span class="feature-icon">✿</span>
+                    <h3>Your Cake, Your Way</h3>
+                    <p>Share your preferred flavour, size and design ideas.</p>
+                </article>
+
+                <article class="feature">
+                    <span class="feature-icon">🎂</span>
+                    <h3>Made to Celebrate</h3>
+                    <p>Find inspiration for your next special occasion.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="gallery-section section-padding">
             <div class="section-heading">
                 <div>
-                    <span class="eyebrow">A TASTE OF OUR MENU</span>
-                    <h2>Sweet favourites, <span>always.</span></h2>
-                    <p class="menu-intro">
-                        A little preview of the flavours waiting for you.
-                    </p>
+                    <span class="eyebrow">A LITTLE CAKE INSPIRATION</span>
+                    <h2>Made to make you smile.</h2>
                 </div>
+                <a class="text-link" href="menu.html">Explore the menu ↗</a>
             </div>
 
-            <div class="cake-grid">
-
+            <div class="cake-gallery">
                 <article class="cake-card">
-                    <a href="menu.html" class="cake-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
-                            alt="Chocolate cake with chocolate frosting"
-                            loading="lazy"
-                        >
-
-                        <span class="cake-tag">Rich & indulgent</span>
-                    </a>
-
-                    <div class="cake-info">
-                        <div>
-                            <h3>Chocolate Truffle</h3>
-                            <p>For the chocolate lovers.</p>
-                        </div>
-
-                        <a
-                            href="menu.html"
-                            class="cake-arrow"
-                            aria-label="Explore Chocolate Truffle"
-                        >↗</a>
+                    <img src="3.jpg"
+                         alt="Pink and white celebration cake decorated with a large lily">
+                    <div class="cake-card-info">
+                        <span>CELEBRATION CAKE</span>
+                        <h3>Floral Elegance</h3>
                     </div>
                 </article>
 
                 <article class="cake-card">
-                    <a href="menu.html" class="cake-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80"
-                            alt="Chocolate dessert with rich chocolate layers"
-                            loading="lazy"
-                        >
-
-                        <span class="cake-tag">A classic favourite</span>
-                    </a>
-
-                    <div class="cake-info">
-                        <div>
-                            <h3>Black Forest</h3>
-                            <p>A timeless celebration classic.</p>
-                        </div>
-
-                        <a
-                            href="menu.html"
-                            class="cake-arrow"
-                            aria-label="Explore Black Forest"
-                        >↗</a>
+                    <img src="9.jpg"
+                         alt="Pink cake decorated with little red hearts and golden sprinkles">
+                    <div class="cake-card-info">
+                        <span>SWEET SURPRISES</span>
+                        <h3>Made with Love</h3>
                     </div>
                 </article>
 
                 <article class="cake-card">
-                    <a href="menu.html" class="cake-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=80"
-                            alt="Fruit-topped dessert with fresh fruit"
-                            loading="lazy"
-                        >
-
-                        <span class="cake-tag">Fresh & fruity</span>
-                    </a>
-
-                    <div class="cake-info">
-                        <div>
-                            <h3>Fresh Fruit</h3>
-                            <p>A fruity treat for sweet moments.</p>
-                        </div>
-
-                        <a
-                            href="menu.html"
-                            class="cake-arrow"
-                            aria-label="Explore Fresh Fruit cake"
-                        >↗</a>
+                    <img src="11.jpg"
+                         alt="Chocolate jungle-themed cake with handmade animal decorations">
+                    <div class="cake-card-info">
+                        <span>THEMED CAKE</span>
+                        <h3>Little Adventures</h3>
                     </div>
                 </article>
 
+                <article class="cake-card">
+                    <img src="4.jpg"
+                         alt="White birthday cake decorated with personalised photo toppers">
+                    <div class="cake-card-info">
+                        <span>PERSONALISED CAKE</span>
+                        <h3>Your Special Story</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="custom-cta">
+            <div class="custom-cta-copy">
+                <span class="eyebrow">DREAM IT. DESIGN IT. CELEBRATE IT.</span>
+                <h2>Have a cake idea in mind?</h2>
+                <p>
+                    Choose your cake details and tell us what you have imagined.
+                    Let's make your celebration feel like yours.
+                </p>
+                <a class="btn btn-light" href="make-your-cake.html">
+                    Create Your Cake ↗
+                </a>
             </div>
 
-            <!-- ONE MENU CTA -->
-            <div class="custom-cake-banner">
-                <div>
-                    <span class="eyebrow">SOMETHING FOR EVERY CRAVING</span>
-                    <h3>From brownies to cheesecakes.</h3>
-                    <p>
-                        Explore our cakes, special cakes, brownies,
-                        cheesecakes and Swiss rolls.
-                    </p>
-                </div>
+            <img src="6.jpg"
+                 alt="Close-up of the pink floral cake"
+                 class="cta-image">
+        </section>
 
-                <a href="menu.html" class="btn btn-primary">
-                    Explore the Menu <span>→</span>
+        <section class="visit-section section-padding">
+            <div class="visit-image">
+                <img src="7.jpg"
+                     alt="The Make My Cake shop counter">
+            </div>
+
+            <div class="visit-copy">
+                <span class="eyebrow">COME SAY HELLO</span>
+                <h2>A little corner full of sweetness.</h2>
+                <p>
+                    Visit us at Make My Cake in Usha Nagar, Indore.
+                    We'd love to help you find something sweet for your next
+                    celebration.
+                </p>
+                <p class="address">
+                    644, Narendra Tiwari Marg, near Dosa Crush,
+                    Usha Nagar, Indore, Madhya Pradesh 452009
+                </p>
+                <a class="btn btn-primary"
+                   href="https://www.google.com/maps/search/?api=1&query=644%2C%20Narendra%20Tiwari%20Marg%2C%20near%20Dosa%20Crush%2C%20Usha%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh%20452009"
+                   target="_blank" rel="noopener noreferrer">
+                    Get Directions ↗
                 </a>
             </div>
         </section>
-
-        <!-- OUR STORY -->
-        <section class="story-section section-padding" id="about">
-            <div class="story-image">
-                <img
-                    src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85"
-                    alt="Freshly baked pastries"
-                    loading="lazy"
-                >
-            </div>
-
-            <div class="story-content">
-                <span class="eyebrow">A SWEET LITTLE STORY</span>
-
-                <h2>
-                    More than dessert.<br>
-                    <span>It's a memory.</span>
-                </h2>
-
-                <p>
-                    Birthdays, family get-togethers, little surprises,
-                    or simply a day that needs cheering up — there is
-                    always a reason to share something sweet.
-                </p>
-
-                <p>
-                    Make My Cake is about finding that little something
-                    that makes your moment feel even more special.
-                </p>
-            </div>
-        </section>
-
-        <!-- FINAL ORDER CTA -->
-        <section class="final-cta" id="contact">
-            <span class="eyebrow">MADE FOR YOUR SPECIAL MOMENTS</span>
-
-            <h2>Your celebration deserves your favourite cake.</h2>
-
-            <p>
-                Choose your cake, pick your flavours, and start planning
-                something sweet.
-            </p>
-
-            <a href="make-your-cake.html" class="btn btn-light">
-                Make Your Cake <span>→</span>
-            </a>
-        </section>
-
     </main>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
-        <a href="index.html" class="logo">
-            <span class="logo-icon">♡</span>
-            <span>Make My Cake</span>
-        </a>
+        <a class="footer-brand" href="index.html">MAKE MY CAKE ♡</a>
+        <p>Every celebration deserves a little sweetness.</p>
 
-        <p>Made with love for life's sweetest moments.</p>
-
-
-        <small>© <span id="currentYear"></span> Make My Cake</small>
+        <p class="copyright">© <span id="currentYear"></span> Make My Cake</p>
     </footer>
 
 </body>
