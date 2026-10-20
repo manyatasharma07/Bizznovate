@@ -314,3 +314,76 @@ a.contact-item:hover strong {
         font-size: 24px;
     }
 }
+
+.map-card {
+    margin-top: 22px;
+    overflow: hidden;
+    border: 1px solid #eadfd8;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 12px 35px rgba(73, 52, 47, 0.07);
+}
+
+.map-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+}
+
+.map-pin {
+    font-size: 27px;
+    line-height: 1.4;
+}
+
+.map-address h3 {
+    margin: 0 0 7px;
+    color: #49342f;
+    font-size: 19px;
+}
+
+.map-address p {
+    margin: 0 0 16px;
+    color: #85736d;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.directions-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #b85c70;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.directions-btn:hover {
+    background: #98465a;
+}
+
+.map-frame {
+    width: 100%;
+    line-height: 0;
+    background: #f7e1e4;
+}
+
+.map-frame iframe {
+    display: block;
+    width: 100%;
+    min-height: 320px;
+}
+
+@media (max-width: 500px) {
+    .map-address {
+        padding: 19px;
+        gap: 11px;
+    }
+
+    .map-frame iframe {
+        height: 320px;
+    }
+}
