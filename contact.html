@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Make My Cake</title>
+    <link rel="stylesheet" href="make-your-cake.css">
+    <link rel="stylesheet" href="contact.css">
+    <script src="contact.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">Make My Cake<span>.</span></a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+          <a href="contact.html" class="active">Contact</a>
+            <a href="make-your-cake.html">Make Your Cake</a>
+      
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <span class="eyebrow">WE'D LOVE TO HEAR FROM YOU</span>
+            <h1>Let's Talk <span>Cake!</span></h1>
+            <p>Have a question, a special request, or a cake idea in mind? Tell us about it. We'd love to help make your celebration sweeter.</p>
+        </section>
+
+        <section class="contact-container">
+            <div class="contact-details">
+                <div class="contact-heading">
+                    <h2>Get in Touch</h2>
+                    <p>Reach out to us for orders, enquiries, or custom cake designs.</p>
+                </div>
+
+                <a class="contact-item" id="phoneLink" href="#">
+                    <span class="contact-icon">☎</span>
+                    <span>
+                        <strong>Call Us</strong>
+                        <small id="phoneText">Add your bakery phone number</small>
+                    </span>
+                </a>
+
+                <a class="contact-item" id="whatsappLink" href="#" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-icon whatsapp-icon">W</span>
+                    <span>
+                        <strong>WhatsApp Us</strong>
+                        <small>Chat with us about your cake</small>
+                    </span>
+                </a>
+
+                <div class="contact-item">
+                    <span class="contact-icon">⌖</span>
+                    <span>
+                        <strong>Visit Our Bakery</strong>
+                        <small id="addressText">Add your complete bakery address</small>
+                    </span>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-icon">◷</span>
+                    <span>
+                        <strong>Opening Hours</strong>
+                        <small id="hoursText">Add your bakery's opening hours</small>
+                    </span>
+                </div>
+
+                <div class="contact-note">
+                    <strong>Planning a special celebration?</strong>
+                    <p>Share your preferred date and cake design with us in advance so we can discuss availability.</p>
+                    <a href="make-your-cake.html" class="text-link">Design your cake →</a>
+                </div>
+            </div>
+
+            <div class="enquiry-card">
+                <h2>Send an Enquiry</h2>
+                <p class="form-intro">Fill in the details below and continue on WhatsApp to send your message.</p>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number *</label>
+                        <input type="tel" id="mobile" name="mobile"
+                               placeholder="10-digit mobile number"
+                               inputmode="numeric" pattern="[6-9][0-9]{9}"
+                               maxlength="10" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enquiryType">What can we help you with? *</label>
+                        <select id="enquiryType" name="enquiryType" required>
+                            <option value="">Select an enquiry</option>
+                            <option>Custom cake order</option>
+                            <option>Flavour and price enquiry</option>
+                            <option>Existing order enquiry</option>
+                            <option>Delivery enquiry</option>
+                            <option>Feedback or suggestion</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="5"
+                                  placeholder="Tell us what you need..." required></textarea>
+                    </div>
+
+                    <p id="contactError" class="contact-error" role="alert"></p>
+
+                    <button type="submit" class="contact-submit">
+                        Continue to WhatsApp ↗
+                    </button>
+
+                    <p class="privacy-note">Your message will open in WhatsApp for you to review and send.</p>
+                </form>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div>
+                <span class="eyebrow">COME SAY HELLO</span>
+                <h2>Find Our Bakery</h2>
+                <p>Visit us in person for enquiries and cake discussions.</p>
+            </div>
+
+            <div class="map-placeholder">
+                <span class="map-pin">⌖</span>
+                <h3>Our Bakery Location</h3>
+                <p id="mapAddress">Add your bakery address to show the map.</p>
+                <a id="mapLink" href="#" target="_blank" rel="noopener noreferrer" hidden>
+                    Open in Google Maps ↗
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Made with love at Make My Cake ♡</p>
+        <a href="index.html">Back to Home</a>
+    </footer>
+</body>
+</html>
