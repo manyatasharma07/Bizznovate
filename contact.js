@@ -1,9 +1,9 @@
-
 const CONTACT_CONFIG = {
     whatsappNumber: "917742191452",
     phoneNumber: "916261619947",
     address: "644, Narendra Tiwari Marg, near Dosa Crush, Usha Nagar, Indore, Madhya Pradesh 452009",
-    openingHours: "Please contact us for current opening hours"
+    openingHours: "Please contact us for current opening hours",
+    mapLink: "https://www.google.com/maps/search/?api=1&query=Make+My+Cake%2C+642+Narendra+Tiwari+Marg%2C+Sudama+Nagar%2C+Indore"
 };
 
 function configureContactDetails() {
@@ -15,35 +15,18 @@ function configureContactDetails() {
     const mapAddress = document.getElementById("mapAddress");
     const mapLink = document.getElementById("mapLink");
 
-    const hasPhone =
-        CONTACT_CONFIG.phoneNumber !== "YOUR_PHONE_NUMBER";
-
-    const hasWhatsApp =
-        CONTACT_CONFIG.whatsappNumber !== "91YOURNUMBER";
-
     if (phoneText) {
-        phoneText.textContent = hasPhone
-            ? CONTACT_CONFIG.phoneNumber
-            : "Contact number coming soon";
+        phoneText.textContent = CONTACT_CONFIG.phoneNumber;
     }
 
     if (phoneLink) {
-        phoneLink.href = hasPhone
-            ? `tel:${CONTACT_CONFIG.phoneNumber}`
-            : "#";
+        phoneLink.href = `tel:${CONTACT_CONFIG.phoneNumber}`;
     }
 
     if (whatsappLink) {
-        whatsappLink.href = hasWhatsApp
-            ? `https://wa.me/${CONTACT_CONFIG.whatsappNumber}`
-            : "#";
-
-        if (!hasWhatsApp) {
-            whatsappLink.addEventListener("click", function (event) {
-                event.preventDefault();
-                alert("Our WhatsApp number will be available soon.");
-            });
-        }
+        whatsappLink.href = `https://wa.me/${CONTACT_CONFIG.whatsappNumber}`;
+        whatsappLink.target = "_blank";
+        whatsappLink.rel = "noopener noreferrer";
     }
 
     if (addressText) {
@@ -59,10 +42,7 @@ function configureContactDetails() {
     }
 
     if (mapLink) {
-        mapLink.href =
-            "https://www.google.com/maps/search/?api=1&query=" +
-            encodeURIComponent(CONTACT_CONFIG.address);
-
+        mapLink.href = CONTACT_CONFIG.mapLink;
         mapLink.target = "_blank";
         mapLink.rel = "noopener noreferrer";
     }
@@ -79,19 +59,6 @@ function setupContactForm() {
 
         if (contactError) {
             contactError.textContent = "";
-        }
-
-        if (
-            CONTACT_CONFIG.whatsappNumber === "91YOURNUMBER" ||
-            !/^\d{10,15}$/.test(CONTACT_CONFIG.whatsappNumber)
-        ) {
-            if (contactError) {
-                contactError.textContent =
-                    "The bakery's WhatsApp number has not been configured yet.";
-            } else {
-                alert("The bakery's WhatsApp number has not been configured yet.");
-            }
-            return;
         }
 
         const name = document.getElementById("name")?.value.trim() || "";
