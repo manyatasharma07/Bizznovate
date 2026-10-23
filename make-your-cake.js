@@ -4,7 +4,7 @@ const BOOKINGS_KEY = "mmcDailyBookings";
 
 // Replace this with the bakery's WhatsApp number.
 // Use country code + number, without +, spaces, or hyphens.
-const BAKERY_WHATSAPP_NUMBER = "91774219145";
+const BAKERY_WHATSAPP_NUMBER = "917742191452";
 
 const form = document.getElementById("cakeForm");
 const dateInput = document.getElementById("preferredDate");
@@ -235,7 +235,7 @@ form.addEventListener("submit", function (event) {
 
     if (
         !/^\d{10,15}$/.test(BAKERY_WHATSAPP_NUMBER) ||
-        BAKERY_WHATSAPP_NUMBER === "91774219145"
+        BAKERY_WHATSAPP_NUMBER === "917742191452"
     ) {
         formError.textContent =
             "Please add the bakery's WhatsApp number in customizer.js first.";
