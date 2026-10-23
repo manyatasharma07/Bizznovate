@@ -4,239 +4,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make Your Cake | Menu</title>
-    <link rel="stylesheet" href="make-your-cake.css">
-    <script src="make-your-cake.js" defer></script>
+    <title>Customise Your Cake | Make My Cake</title>
+    <link rel="stylesheet" href="customizer.css">
 </head>
 <body>
     <header class="site-header">
-        <a href="index.html" class="logo">Make My Cake<span>.</span></a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="contact.html">Contact</a>
-            <a href="make-your-cake.html" class="active">Make Your Cake</a>
-        </nav>
+        <a class="brand" href="index.html">
+            <span class="brand-icon">🎂</span>
+            <span>Make My Cake<small>Made with love, baked with joy</small></span>
+        </a>
+        <a class="back-link" href="index.html">← Back to Home</a>
     </header>
 
     <main class="page-container">
-        <section class="page-heading">
-            <span class="eyebrow">MADE JUST FOR YOU</span>
-            <h1>Create Your <span>Dream Cake</span></h1>
-            <p>Choose your favourite flavour, share your design ideas, and request your preferred date.</p>
+        <section class="hero">
+            <p class="eyebrow">YOUR CAKE, YOUR WAY</p>
+            <h1>Let's Make Your <span>Dream Cake!</span></h1>
+            <p>Choose your cake, personalise the details, and send your order request.</p>
         </section>
 
-        <section class="capacity-banner">
-            <div>
-                <strong>Every cake deserves time and care.</strong>
-                <p>We accept a limited number of orders each day. Check your preferred date below.</p>
+        <section class="booking-card">
+            <div class="section-heading">
+                <span class="step">01</span>
+                <div>
+                    <h2>Choose Your Cake</h2>
+                    <p>Tell us what you would love us to bake.</p>
+                </div>
             </div>
-            <span class="capacity-tag">Limited daily slots</span>
-        </section>
 
-        <div class="content-grid">
-            <section class="form-card">
-                <form id="cakeForm">
-                    <h2>Build Your Cake</h2>
-                    <p class="section-description">Tell us what you have in mind.</p>
-
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="cakeCategory">Cake category *</label>
-                            <select id="cakeCategory" name="cakeCategory" required>
-                                <option value="">Select category</option>
-                                <option value="Regular Cake">Regular Cake</option>
-                                <option value="Special Cake">Special Cake</option>
-                                <option value="Custom Designer Cake">Custom Designer Cake</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cakeFlavor">Flavour *</label>
-                            <select id="cakeFlavor" name="cakeFlavor" required>
-                                <option value="">Choose a flavour</option>
-                                <option>Tutti Fruity</option>
-                                <option>Butterscotch</option>
-                                <option>Rose Gulkand</option>
-                                <option>Kulfi Faluda</option>
-                                <option>Kesar Pista</option>
-                                <option>Paan</option>
-                                <option>Pineapple</option>
-                                <option>Strawberry</option>
-                                <option>Blueberry</option>
-                                <option>Mango</option>
-                                <option>Fresh Fruit</option>
-                                <option>American Nuts</option>
-                                <option>Dry Fruits</option>
-                                <option>Red Velvet</option>
-                                <option>Truffle</option>
-                                <option>Triple Chocolate</option>
-                                <option>Black Forest</option>
-                                <option>Chocolate</option>
-                                <option>Oreo Chocolate</option>
-                                <option>White Forest</option>
-                                <option>Milk Chocolate</option>
-                                <option>Coffee Mocha</option>
-                                <option>Nutella</option>
-                                <option>Biscoff</option>
-                                <option>Hazelnut</option>
-                                <option>Kit Kat</option>
-                                <option>Dairy Milk</option>
-                                <option>Rabdi</option>
-                                <option>Rasmalai</option>
-                                <option>Tiramisu</option>
-                                <option>Belgium Chocolate</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cakeSize">Cake size *</label>
-                            <select id="cakeSize" name="cakeSize" required>
-                                <option value="">Choose size</option>
-                                <option value="0.5 kg">0.5 kg</option>
-                                <option value="1 kg">1 kg</option>
-                                <option value="1.5 kg">1.5 kg</option>
-                                <option value="2 kg">2 kg</option>
-                                <option value="3 kg">3 kg</option>
-                                <option value="Custom size">Custom size — discuss with bakery</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="occasion">Occasion</label>
-                            <select id="occasion" name="occasion">
-                                <option value="">Choose occasion</option>
-                                <option>Birthday</option>
-                                <option>Anniversary</option>
-                                <option>Wedding</option>
-                                <option>Engagement</option>
-                                <option>Baby Shower</option>
-                                <option>Graduation</option>
-                                <option>Festival</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label for="cakeMessage">Message on the cake</label>
-                            <input type="text" id="cakeMessage" name="cakeMessage"
-                                   placeholder="e.g. Happy Birthday, Aanya!">
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label for="designNotes">Design or decoration details</label>
-                            <textarea id="designNotes" name="designNotes" rows="4"
-                                      placeholder="Describe the colours, theme, design, or reference image you have in mind."></textarea>
-                        </div>
+            <form id="cakeForm">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="cakeCategory">Cake category *</label>
+                        <select id="cakeCategory" required>
+                            <option value="">Choose a category</option>
+                            <option>Birthday Cake</option>
+                            <option>Chocolate Cake</option>
+                            <option>Photo Cake</option>
+                            <option>Theme Cake</option>
+                            <option>Wedding Cake</option>
+                            <option>Anniversary Cake</option>
+                            <option>Designer Cake</option>
+                            <option>Other</option>
+                        </select>
                     </div>
 
-                    <div class="section-divider"></div>
-
-                    <h2>Choose Your Date</h2>
-                    <p class="section-description">Your order date is subject to availability and bakery confirmation.</p>
-
-                    <div class="availability-card" id="availabilityCard">
-                        <span class="status-dot" id="availabilityDot"></span>
-                        <div>
-                            <strong id="availabilityTitle">Check your preferred date</strong>
-                            <p id="availabilityMessage">Select a date to see the available order slots.</p>
-                        </div>
+                    <div class="field">
+                        <label for="cakeFlavor">Flavour *</label>
+                        <select id="cakeFlavor" required>
+                            <option value="">Choose a flavour</option>
+                            <option>Chocolate</option>
+                            <option>Black Forest</option>
+                            <option>White Forest</option>
+                            <option>Butterscotch</option>
+                            <option>Vanilla</option>
+                            <option>Strawberry</option>
+                            <option>Red Velvet</option>
+                            <option>Pineapple</option>
+                            <option>Other / Please suggest</option>
+                        </select>
                     </div>
 
-                    <div class="form-grid date-grid">
-                        <div class="form-group">
-                            <label for="preferredDate">Preferred date *</label>
-                            <input type="date" id="preferredDate" name="preferredDate" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="preferredTime">Preferred time *</label>
-                            <select id="preferredTime" name="preferredTime" required>
-                                <option value="">Choose time</option>
-                                <option>10 AM – 12 PM</option>
-                                <option>12 PM – 2 PM</option>
-                                <option>2 PM – 4 PM</option>
-                                <option>4 PM – 6 PM</option>
-                                <option>6 PM – 8 PM</option>
-                            </select>
-                        </div>
+                    <div class="field">
+                        <label for="cakeSize">Cake size *</label>
+                        <select id="cakeSize" required>
+                            <option value="">Choose a size</option>
+                            <option>0.5 kg</option>
+                            <option>1 kg</option>
+                            <option>1.5 kg</option>
+                            <option>2 kg</option>
+                            <option>3 kg</option>
+                            <option>Custom size</option>
+                        </select>
                     </div>
 
-                    <button type="button" class="suggested-date-btn" id="useSuggestedDate" hidden>
-                        Use suggested date
-                    </button>
+                    <div class="field">
+                        <label for="occasion">Occasion</label>
+                        <select id="occasion">
+                            <option value="">Select an occasion</option>
+                            <option>Birthday</option>
+                            <option>Anniversary</option>
+                            <option>Wedding</option>
+                            <option>Baby shower</option>
+                            <option>Graduation</option>
+                            <option>Corporate event</option>
+                            <option>Just because</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
 
-                    <div class="form-group">
-                        <label for="deliveryOption">Pickup or delivery? *</label>
-                        <select id="deliveryOption" name="deliveryOption" required>
+                    <div class="field full-width">
+                        <label for="cakeMessage">Message on the cake</label>
+                        <input id="cakeMessage" type="text" maxlength="100"
+                               placeholder="e.g. Happy Birthday, Aarav!">
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="designNotes">Design and customisation details</label>
+                        <textarea id="designNotes" rows="4"
+                            placeholder="Describe your theme, colours, design, or reference cake..."></textarea>
+                    </div>
+                </div>
+
+                <div class="section-heading section-spaced">
+                    <span class="step">02</span>
+                    <div>
+                        <h2>Choose Your Date</h2>
+                        <p>We accept a limited number of orders each day.</p>
+                    </div>
+                </div>
+
+                <div id="availabilityCard" class="availability-card">
+                    <span id="availabilityDot" class="availability-dot"></span>
+                    <div>
+                        <h3 id="availabilityTitle">Check your preferred date</h3>
+                        <p id="availabilityMessage">Select a date to see the available order slots.</p>
+                    </div>
+                </div>
+
+                <button type="button" id="useSuggestedDate" class="suggested-date"
+                        hidden>Choose suggested date</button>
+
+                <div class="form-grid date-grid">
+                    <div class="field">
+                        <label for="preferredDate">Preferred date *</label>
+                        <input id="preferredDate" type="date" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="preferredTime">Preferred time *</label>
+                        <select id="preferredTime" required>
+                            <option value="">Choose a time</option>
+                            <option>10:00 AM – 12:00 PM</option>
+                            <option>12:00 PM – 2:00 PM</option>
+                            <option>2:00 PM – 4:00 PM</option>
+                            <option>4:00 PM – 6:00 PM</option>
+                            <option>6:00 PM – 8:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="deliveryOption">Pickup or delivery *</label>
+                        <select id="deliveryOption" required>
                             <option value="">Choose an option</option>
                             <option value="Store pickup">Store pickup</option>
                             <option value="Home delivery">Home delivery</option>
                         </select>
                     </div>
 
-                    <div class="form-group" id="addressGroup" hidden>
+                    <div class="field full-width" id="addressGroup" hidden>
                         <label for="deliveryAddress">Delivery address *</label>
-                        <textarea id="deliveryAddress" name="deliveryAddress" rows="3"
-                                  placeholder="Enter your complete delivery address"></textarea>
+                        <textarea id="deliveryAddress" rows="3"
+                            placeholder="Enter your complete delivery address"></textarea>
+                    </div>
+                </div>
+
+                <div class="section-heading section-spaced">
+                    <span class="step">03</span>
+                    <div>
+                        <h2>Your Details</h2>
+                        <p>So we can follow up about your cake.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="customerName">Your name *</label>
+                        <input id="customerName" type="text" maxlength="100"
+                               autocomplete="name" required placeholder="Enter your name">
                     </div>
 
-                    <div class="section-divider"></div>
-
-                    <h2>Your Details</h2>
-
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="customerName">Your name *</label>
-                            <input type="text" id="customerName" name="customerName"
-                                   placeholder="Full name" autocomplete="name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="customerPhone">Your mobile number *</label>
-                            <input type="tel" id="customerPhone" name="customerPhone"
-                                   placeholder="10-digit mobile number"
-                                   inputmode="numeric" pattern="[6-9][0-9]{9}"
-                                   maxlength="10" autocomplete="tel" required>
-                        </div>
+                    <div class="field">
+                        <label for="customerPhone">Mobile number *</label>
+                        <input id="customerPhone" type="tel" inputmode="numeric"
+                               maxlength="10" pattern="[6-9][0-9]{9}"
+                               autocomplete="tel" required placeholder="10-digit mobile number">
                     </div>
+                </div>
 
-                    <p class="notice">
-                        Submitting opens WhatsApp with your order details. Your cake is not confirmed
-                        until the bakery replies and confirms availability and price.
-                    </p>
+                <p id="formError" class="form-error" role="alert"></p>
 
-                    <p class="form-error" id="formError" role="alert"></p>
+                <button type="submit" id="reviewOrderButton" class="submit-button">
+                    Submit Order Request 🎂
+                </button>
 
-                    <button type="submit" class="submit-order-btn" id="reviewOrderButton">
-                        Submit Order on WhatsApp
-                    </button>
-                </form>
-            </section>
+                <p class="form-note">
+                    Your request will appear on this website and open in WhatsApp.
+                    Your order is confirmed only after the bakery responds.
+                </p>
+            </form>
 
-            <aside class="info-card">
-                <div class="info-icon">🎂</div>
-                <h3>Your cake, your way.</h3>
-                <p>Share your flavour, size, occasion, and decoration ideas. Our team can discuss the final design and price with you.</p>
+            <section id="orderConfirmation" class="order-confirmation" role="status"
+                     aria-live="polite" hidden></section>
+        </section>
 
-                <div class="info-divider"></div>
-
-                <h4>How it works</h4>
-                <ol>
-                    <li>Choose your cake and flavour.</li>
-                    <li>Select an available preferred date.</li>
-                    <li>Submit your details through WhatsApp.</li>
-                    <li>Wait for the bakery to confirm your order.</li>
-                </ol>
-
-                <div class="info-divider"></div>
-
-            </aside>
-        </div>
+        <section class="contact-note">
+            <h2>Need help with your design?</h2>
+            <p>Contact Make My Cake to discuss your requirements.</p>
+            <a href="https://wa.me/917742191452" target="_blank" rel="noopener">
+                Chat with us on WhatsApp
+            </a>
+        </section>
     </main>
 
-    <footer class="site-footer">
-        <p>Made with love at Make My Cake ♡</p>
+    <footer>
+        <p>© <span id="currentYear"></span> Make My Cake. Made with love.</p>
     </footer>
+
+    <script src="customizer.js"></script>
 </body>
 </html>
